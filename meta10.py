@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 # -------------------------------------------------------------------
 class Config:
     BEDROCK_KB_ID = os.getenv("BEDROCK_KNOWLEDGE_BASE_ID", "BVWGHMKJOQ")
-    AWS_REGION = os.getenv("BEDROCK_REGION_NAME", "us-west-2")
+    AWS_REGION = os.getenv("BEDROCK_REGION_NAME", "ap-south-1")
     EMBED_MODEL = "amazon.titan-embed-text-v2:0"
     CHAT_MODEL = "meta.llama3-70b-instruct-v1:0"
     MEMORY_SEARCH_K = 5
