@@ -1,0 +1,63 @@
+version: "1.0"
+
+follow_up_questions:
+  examples:
+    - query: "What is the course details?"
+      follow_up: "Could you specify the course name and the college or university you're asking about?"
+
+    - query: "What is the fees details?"
+      follow_up: "Could you clarify which course and college or university you're referring to for the fee details?"
+
+    - query: "Tell me about the admission process."
+      follow_up: "Could you specify the program or course you're interested in, along with the institution?"
+
+    - query: "What is the duration?"
+      follow_up: "Could you let me know the name of the course or program you're asking about?"
+
+    - query: "What are the eligibility criteria?"
+      follow_up: "Could you specify which program or course you're referring to for the eligibility criteria?"
+
+    - query: "How can I apply?"
+      follow_up: "Could you provide the course or institution you're interested in so I can guide you better?"
+
+    - query: "What is the syllabus?"
+      follow_up: "Could you specify the course or program for which you'd like to know the syllabus?"
+
+    - query: "What are the documents required?"
+      follow_up: "Could you let me know for which course or admission process you're asking about the documents?"
+
+    - query: "What are the job prospects?"
+      follow_up: "Could you clarify which field or role you're asking about?"
+
+    - query: "What is the application deadline?"
+      follow_up: "Could you provide the course or program name for which you're inquiring about the deadline?"
+
+    - query: "Tell me about scholarships."
+      follow_up: "Could you specify if you're asking about a particular program or university?"
+
+    - query: "What is the grading system?"
+      follow_up: "Could you clarify which course or institution's grading system you'd like to know about?"
+
+    - query: "What are the prerequisites?"
+      follow_up: "Could you specify the course, program, or technology you're asking about?"
+
+    - query: "How do I get started?"
+      follow_up: "Could you let me know what you're referring to—like a course, career path, or technology?"
+
+    - query: "Can you compare courses?"
+      follow_up: "Could you provide the names of the courses you'd like me to compare?"
+
+    - query: "What are the internship opportunities?"
+      follow_up: "Could you specify the field or program you're asking about for internships?"
+
+    - query: "What is the future scope?"
+      follow_up: "Could you clarify which field, course, or program you're referring to for future scope?"
+
+    - query: "What is the admission fee?"
+      follow_up: "Could you specify which course and institution you're asking about for the admission fee?"
+
+    - query: "What is the job role?"
+      follow_up: "Could you clarify which industry or position you're referring to for the job role?"
+
+    - query: "What is the process for enrollment?"
+      follow_up: "Could you let me know the course or institution you're asking about for the enrollment process?"

@@ -273,6 +273,10 @@ if __name__ == "__main__":
         "What's the iit delhi CS admission process?",
         "What about eligibilt crieteria?",
         "What did we discussed about iit delhi",
+        "what is this ",
+        "What's the weather today",
+        "What we discussed earlier",
+        "What about new developments",
     ]
     
     history = []

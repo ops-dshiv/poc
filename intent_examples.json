@@ -1,0 +1,194 @@
+{
+    "version": "3.0",
+    "last_updated": "2024-03-15",
+    "language": "en",
+    "supported_regions": [
+      "IN",
+      "US",
+      "UK",
+      "AU"
+    ],
+    "intents": [
+      {
+        "name": "Greeting",
+        "description": "Various types of greetings",
+        "examples": {
+          "casual": [
+            "hey",
+            "hi",
+            "hello",
+            "yo",
+            "sup",
+            "hi buddy",
+            "hey champ",
+            "hi folks",
+            "hiya",
+            "what's up",
+            "howdy",
+            "yo yo",
+            "hey there",
+            "wassup",
+            "hii",
+            "heyy",
+            "hola",
+            "heyho",
+            "hi there",
+            "hey ya"
+          ],
+          "formal": [
+            "good morning",
+            "good afternoon",
+            "good evening",
+            "how do you do",
+            "pleased to meet you",
+            "I trust you're well",
+            "hope you're doing well",
+            "it's a pleasure to see you",
+            "delighted to meet you",
+            "I'm glad to meet you",
+            "I'm pleased to meet you",
+            "warm greetings",
+            "salutations",
+            "good day",
+            "how have you been?"
+          ],
+          "cultural": [
+            "namaste",
+            "vanakkam",
+            "sat sri akal",
+            "jai jinendra",
+            "radhe radhe",
+            "adab",
+            "kem cho",
+            "khamma gani",
+            "nomoshkar",
+            "salaam",
+            "jai shri krishna",
+            "jai bajarangbali"
+          ],
+          "reengagement": [
+            "hey again",
+            "hello again",
+            "long time no see",
+            "back again",
+            "good to reconnect",
+            "we meet again",
+            "look who it is",
+            "fancy seeing you here",
+            "we're chatting again",
+            "nice to catch up"
+          ]
+        },
+        "response_strategy": "return_introduction"
+      },
+      {
+        "name": "Education",
+        "description": "General education-related queries",
+        "examples": [
+          "Tell me about top universities",
+          "What courses are offered at IIT Delhi?",
+          "I need information on college rankings",
+          "Give me details on admission procedures"
+        ],
+        "entities": [
+          "college",
+          "program",
+          "course"
+        ],
+        "response_strategy": "education_info"
+      },
+      {
+        "name": "Vague",
+        "description": "Ambiguous or unclear queries that need clarification",
+        "examples": [
+          "I'm not sure what I want",
+          "Can you help me?",
+          "I don't know, can you clarify?",
+          "Not clear on what I need"
+        ],
+        "response_strategy": "vague_info"
+      },
+      {
+        "name": "OutOfScope",
+        "description": "Queries outside of the education domain",
+        "examples": [
+          "What's the weather today?",
+          "How to make pasta?",
+          "Latest movie releases",
+          "Stock market updates"
+        ],
+        "response_strategy": "redirect_to_scope"
+      },
+      {
+        "name": "Memory",
+        "description": "Queries related to recalling previous conversations",
+        "examples": [
+          "What did we discuss earlier?",
+          "Can you remind me of our last conversation?",
+          "Recall our previous topics",
+          "What was our last discussion about?"
+        ],
+        "response_strategy": "memory_info"
+      }
+    ],
+    "responses": {
+      "return_introduction": [
+        "Welcome! How may I assist you today?",
+        "Hello there! I'm here to help with your education-related queries."
+      ],
+      "education_info": [
+        "Here is some detailed information on the topic.",
+        "Let me provide you with the education-related details you requested."
+      ],
+      "vague_info": [
+        "I'm not sure I understand. Could you please provide more details?",
+        "Can you clarify your query further?"
+      ],
+      "redirect_to_scope": [
+        "I'm sorry, I can only help with education-related queries.",
+        "This query is outside my scope. Please ask an education-related question."
+      ],
+      "memory_info": [
+        "Here's a summary of our previous conversation.",
+        "Let me remind you of what we discussed earlier."
+      ],
+      "default": [
+        "I didn't understand that. Could you please rephrase?",
+        "I'm not sure how to help with that. Can you provide more details?"
+      ]
+    },
+    "metadata": {
+      "total_intents": 5,
+      "total_examples": 100,
+      "language_variants": [
+        "en-IN",
+        "en-US",
+        "en-GB"
+      ],
+      "entity_types": {
+        "college": [
+          "IIT Delhi",
+          "NIT Trichy",
+          "BITS Pilani",
+          "DU South Campus"
+        ],
+        "program": [
+          "B.Tech CS",
+          "MBA Finance",
+          "M.Sc Physics",
+          "BBA"
+        ],
+        "course": [
+          "Data Structures",
+          "Quantum Mechanics",
+          "Financial Accounting"
+        ]
+      },
+      "validation": {
+        "last_tested": "2024-03-15",
+        "accuracy_score": 0.92,
+        "coverage_score": 0.88
+      }
+    }
+  }
+  

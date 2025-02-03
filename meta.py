@@ -40,8 +40,8 @@ logger = logging.getLogger(__name__)
 class Config:
     BEDROCK_KB_ID = os.getenv("BEDROCK_KNOWLEDGE_BASE_ID")
     AWS_REGION = os.getenv("AWS_REGION", "us-west-2")
-    EMBED_MODEL = "amazon.titan-embed-text-v1"
-    CHAT_MODEL = "anthropic.claude-3-sonnet-20240229-v1:0"
+    EMBED_MODEL = "amazon.titan-embed-text-v2:0"
+    CHAT_MODEL = "amazon.titan-embed-text-v2:0"
     MEMORY_SEARCH_K = 5
     MAX_HISTORY = 7
     SESSION_TIMEOUT = 300  # 5 minutes
@@ -351,42 +351,72 @@ class EducationAssistant:
 # =========================================================================
 # Example Usage
 # =========================================================================
-if __name__ == "__main__":
-    # Initialize chatbot
-    assistant = EducationAssistant()
-    session_id = str(uuid.uuid4())
+# if __name__ == "__main__":
+#     # Initialize chatbot
+#     assistant = EducationAssistant()
+#     session_id = str(uuid.uuid4())
     
-    # Example conversation
+#     # Example conversation
+#     queries = [
+#         "Hi there!",
+#         "What's the admission process for Stanford CS?",
+#         "What about scholarship opportunities?",
+#         "How does this compare to MIT?",
+#         "What's the weather in California?"
+#     ]
+    
+#     history = []
+#     for query in queries:
+#         print(f"User: {query}")
+        
+#         # Process query
+#         result = assistant.graph.invoke({
+#             "query": query,
+#             "session_id": 1,
+#             "history": history
+#         })
+        
+#         # Store history
+#         history.append(f"User: {query}")
+#         history.append(f"Assistant: {result['response']}")
+        
+#         print(f"Bot: {result['response']}\n")
+
+#     # Test memory recall
+#     print("Testing memory recall...")
+#     memory_test = assistant.graph.invoke({
+#         "query": "What did we discuss about Stanford?",
+#         "session_id": 1,
+#         "history": history
+#     })
+#     print(f"Bot: {memory_test['response']}")
+
+# Example Usage
+if __name__ == "__main__":
+    assistant = EducationAssistant()
+    thread_id = "demo_thread6"
+    
     queries = [
         "Hi there!",
-        "What's the admission process for Stanford CS?",
-        "What about scholarship opportunities?",
-        "How does this compare to MIT?",
-        "What's the weather in California?"
+        "What's the iit delhi CS admission process?",
+        "What about eligibilt crieteria?",
+        "What did we discussed about iit delhi",
+        "what is this ",
+        "What's the weather today",
+        "What we discussed earlier",
+        "What about new developments",
     ]
     
     history = []
     for query in queries:
-        print(f"User: {query}")
+        print(f"\nUser: {query}")
         
-        # Process query
-        result = assistant.graph.invoke({
-            "query": query,
-            "session_id": 1,
-            "history": history
-        })
+        result = assistant.graph.invoke(
+            {"query": query, "history": history, "thread_id": thread_id},
+            {"configurable": {"thread_id": thread_id}}
+        )
         
-        # Store history
+        response = result.get("response", "Error processing request")
         history.append(f"User: {query}")
-        history.append(f"Assistant: {result['response']}")
-        
-        print(f"Bot: {result['response']}\n")
-
-    # Test memory recall
-    print("Testing memory recall...")
-    memory_test = assistant.graph.invoke({
-        "query": "What did we discuss about Stanford?",
-        "session_id": 1,
-        "history": history
-    })
-    print(f"Bot: {memory_test['response']}")
+        history.append(f"Assistant: {response}")
+        print(f"Bot: {response}")
